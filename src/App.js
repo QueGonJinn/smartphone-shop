@@ -1,25 +1,28 @@
-import logo from './logo.svg';
-import './App.css';
+import './scss/app.scss';
+import Header from './components/Header';
+
+function Category() {
+	return (
+		<div class="categories">
+			<ul>
+				<li class="active">Все</li>
+				<li>Asus</li>
+				<li>MSI</li>
+				<li>Acer</li>
+				<li>HP</li>
+				<li>Aplle</li>
+			</ul>
+		</div>
+	);
+}
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	return (
+		<div>
+			<Header />
+			<Category />
+		</div>
+	);
 }
 
 export default App;
