@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 function LaptopBlock({ price, title, img }) {
+	const [laptopCount, setLaptopCount] = useState(0);
+
 	return (
 		<div className="laptop-block">
 			<img className="laptop-block__image" src={img} alt="laptop" />
@@ -37,7 +39,12 @@ function LaptopBlock({ price, title, img }) {
 			</div>
 			<div className="laptop-block__bottom">
 				<div className="pizza-block__price">от {price} $</div>
-				<div className="button button--outline button--add">
+				<button
+					onClick={() => {
+						setLaptopCount(laptopCount + 1);
+					}}
+					className="button button--outline button--add"
+				>
 					<svg
 						width="12"
 						height="12"
@@ -51,8 +58,8 @@ function LaptopBlock({ price, title, img }) {
 						/>
 					</svg>
 					<span>Добавить</span>
-					<i>2</i>
-				</div>
+					<i>{laptopCount}</i>
+				</button>
 			</div>
 		</div>
 	);

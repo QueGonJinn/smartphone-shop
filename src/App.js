@@ -31,6 +31,21 @@ function App() {
 							title="ASUS ROG Strix G15"
 							img="https://content2.onliner.by/catalog/device/main/3db1d78bf0a7735b064fa2dd0882fa84.jpeg"
 						/>
+						<LaptopBlock
+							price={950}
+							title="HP ProBook 455 G8 32N90EA"
+							img="https://content2.onliner.by/catalog/device/main/58e15c3eeec782199372196952f002d6.jpeg"
+						/>
+						<LaptopBlock
+							price={1200}
+							title="HP Victus 16-e0404nw 4J5R4EA"
+							img="https://content2.onliner.by/catalog/device/main/282a24e49bac8abe759d9a42161cbba4.jpeg"
+						/>
+						<LaptopBlock
+							price={870}
+							title="HONOR MagicBook X14 NBR-WAI9 5301AAPL"
+							img="https://content2.onliner.by/catalog/device/main/126aed2f417cb27607f9aa579b6bbd7e.jpeg"
+						/>
 					</div>
 				</div>
 			</div>
