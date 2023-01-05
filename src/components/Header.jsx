@@ -1,5 +1,5 @@
 import React from 'react';
-import logo from '../img/laptop-screen.png';
+import logo from '../assets/img/smartphone.png';
 
 function Header() {
 	return (
@@ -8,7 +8,7 @@ function Header() {
 				<div className="header__logo">
 					<img width="54" src={logo} alt="Laptop logo" />
 					<div>
-						<h1>React Laptop</h1>
+						<h1>React Smartphone</h1>
 						<p>Always up-to-date prices</p>
 					</div>
 				</div>

@@ -1,13 +1,26 @@
+import React from 'react';
+
 function Category() {
+	const [activeCategory, setActiveCategory] = React.useState(0);
+	const categories = ['Все', 'Aplle', 'Xiaomi', 'Google', 'Samsung', 'POCO', 'Huawei', 'HONOR'];
+	const onClickCategory = (index) => {
+		setActiveCategory(index);
+	};
+
 	return (
 		<div className="categories">
 			<ul>
-				<li className="active">Все</li>
-				<li>Asus</li>
-				<li>MSI</li>
-				<li>Acer</li>
-				<li>HP</li>
-				<li>Aplle</li>
+				{categories.map((e, i) => {
+					return (
+						<li
+							key={i}
+							onClick={() => onClickCategory(i)}
+							className={activeCategory === i ? 'active' : ''}
+						>
+							{e}
+						</li>
+					);
+				})}
 			</ul>
 		</div>
 	);
