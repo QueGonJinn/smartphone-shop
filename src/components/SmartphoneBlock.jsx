@@ -1,6 +1,18 @@
 import React, { useState } from 'react';
+import { v4 as uuid4 } from 'uuid';
 
-function SmartphoneBlock({ img, title, price, RAM, CPU, memory, date, OS, OSversion, display }) {
+function SmartphoneBlock({
+	imageURL,
+	name,
+	RAM,
+	memory,
+	processor,
+	date,
+	OSversion,
+	OS,
+	display,
+	price,
+}) {
 	const [ramActive, setRamActive] = useState(0);
 	const [memoryActive, setMemoryActive] = useState(0);
 
@@ -10,14 +22,14 @@ function SmartphoneBlock({ img, title, price, RAM, CPU, memory, date, OS, OSvers
 
 	return (
 		<div className="smartphone-block">
-			<img className="smartphone-block__image" src={img} alt="smartphone" />
-			<h4 className="smartphone-block__title">{title}</h4>
+			<img className="smartphone-block__image" src={imageURL} alt="smartphone" />
+			<h4 className="smartphone-block__title">{name}</h4>
 			<div className="smartphone-block__selector">
 				<ul>
 					{RAM.map((e, i) => {
 						return (
 							<li
-								key={i}
+								key={uuid4()}
 								onClick={() => onClickActive(i, setRamActive)}
 								className={ramActive === i ? 'active' : ''}
 							>
@@ -30,7 +42,7 @@ function SmartphoneBlock({ img, title, price, RAM, CPU, memory, date, OS, OSvers
 					{memory.map((e, i) => {
 						return (
 							<li
-								key={i}
+								key={uuid4()}
 								onClick={() => onClickActive(i, setMemoryActive)}
 								className={memoryActive === i ? 'active' : ''}
 							>
@@ -43,7 +55,7 @@ function SmartphoneBlock({ img, title, price, RAM, CPU, memory, date, OS, OSvers
 			<div className="smartphone-block__information">
 				<ul>
 					<li>
-						Processor: <span>{CPU}</span>
+						Processor: <span>{processor}</span>
 					</li>
 					<li>
 						Launch date: <span>{date}</span>

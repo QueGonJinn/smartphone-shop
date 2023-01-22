@@ -17,22 +17,8 @@ function App() {
 					</div>
 					<h2 className="content__title">All Smartphone</h2>
 					<div className="content__items">
-						{smartphones.map((item, i) => {
-							return (
-								<SmartphoneBlock
-									img={item.imageURL}
-									title={item.name}
-									price={item.price}
-									RAM={item.RAM}
-									CPU={item.processor}
-									memory={item.memory}
-									date={item.date}
-									OS={item.OS}
-									OSversion={item.OSversion}
-									display={item.display}
-									key={item.id}
-								/>
-							);
+						{smartphones.map((item) => {
+							return <SmartphoneBlock key={item.id} {...item} />;
 						})}
 					</div>
 				</div>

@@ -1,4 +1,5 @@
 import React from 'react';
+import { v4 as uuid4 } from 'uuid';
 
 function Category() {
 	const [activeCategory, setActiveCategory] = React.useState(0);
@@ -13,7 +14,7 @@ function Category() {
 				{categories.map((e, i) => {
 					return (
 						<li
-							key={i}
+							key={uuid4()}
 							onClick={() => onClickCategory(i)}
 							className={activeCategory === i ? 'active' : ''}
 						>
