@@ -7,7 +7,15 @@ import SmartphoneBlock from './components/SmartphoneBlock';
 
 const smartphones = [];
 function App() {
-	const [items, SetItems] = React.useState([]);
+	const [items, setItems] = React.useState([]);
+
+	fetch('https://6421688034d6cd4ebd72620f.mockapi.io/items')
+		.then((data) => {
+			return data.json();
+		})
+		.then((arr) => {
+			setItems(arr);
+		});
 
 	return (
 		<div className="wrapper">
