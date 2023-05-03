@@ -4,18 +4,22 @@ import Header from './components/Header';
 import Category from './components/Category';
 import Sort from './components/Sort';
 import SmartphoneBlock from './components/SmartphoneBlock';
+import Skeleton from './components/SmartphoneBlock/Skeleton';
 
-const smartphones = [];
 function App() {
 	const [items, setItems] = React.useState([]);
+	const [isLoading, setIsLoading] = React.useState(true);
 
-	fetch('https://6421688034d6cd4ebd72620f.mockapi.io/items')
-		.then((data) => {
-			return data.json();
-		})
-		.then((arr) => {
-			setItems(arr);
-		});
+	React.useEffect(() => {
+		fetch('https://6421688034d6cd4ebd72620f.mockapi.io/items')
+			.then((data) => {
+				return data.json();
+			})
+			.then((arr) => {
+				setItems(arr);
+				setIsLoading(false);
+			});
+	}, []);
 
 	return (
 		<div className="wrapper">
@@ -28,9 +32,9 @@ function App() {
 					</div>
 					<h2 className="content__title">All Smartphone</h2>
 					<div className="content__items">
-						{items.map((item) => {
-							return <SmartphoneBlock key={item.id} {...item} />;
-						})}
+						{isLoading
+							? [...new Array(6)].map((_, index) => <Skeleton key={index} />)
+							: items.map((item) => <SmartphoneBlock key={item.id} {...item} />)}
 					</div>
 				</div>
 			</div>
