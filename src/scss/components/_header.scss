@@ -8,6 +8,8 @@
 		display: flex;
 		align-items: center;
 		justify-content: space-between;
+		flex-wrap: wrap;
+		gap: 20px;
 	}
 
 	&__logo {
@@ -27,6 +29,16 @@
 
 		p {
 			color: $black;
+		}
+	}
+}
+@media (max-width: 500px) {
+	.header {
+		img {
+			margin-right: 5px;
+		}
+		h1 {
+			font-size: 18px;
 		}
 	}
 }
