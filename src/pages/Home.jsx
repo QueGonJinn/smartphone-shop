@@ -7,6 +7,7 @@ import Skeleton from '../components/SmartphoneBlock/Skeleton';
 const Home = () => {
 	const [items, setItems] = React.useState([]);
 	const [isLoading, setIsLoading] = React.useState(true);
+	const [categoryId, setCatagoryId] = React.useState(0);
 
 	React.useEffect(() => {
 		fetch('https://6421688034d6cd4ebd72620f.mockapi.io/items')
@@ -23,7 +24,7 @@ const Home = () => {
 	return (
 		<div className="container">
 			<div className="content__top">
-				<Category />
+				<Category value={categoryId} onClickCategory={(i) => setCatagoryId(i)} />
 				<Sort />
 			</div>
 			<h2 className="content__title">All Smartphone</h2>

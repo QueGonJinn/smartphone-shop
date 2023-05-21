@@ -4,7 +4,7 @@ import { v4 as uuid4 } from 'uuid';
 function Sort() {
 	const [isOpen, setIsOpen] = React.useState(false);
 	const [selectSort, setSelectSort] = React.useState(0);
-	const list = ['популярности', 'цене', 'алфавиту'];
+	const list = ['дате', 'цене', 'алфавиту'];
 	const sortName = list[selectSort];
 	const onClickActive = (i) => {
 		setSelectSort(i);
